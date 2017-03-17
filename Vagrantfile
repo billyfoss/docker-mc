@@ -38,6 +38,10 @@ Vagrant.configure("2") do |config|
     vb.cpus = "2"
   end
 
+  # Install any docker provisioner prerequisites 
+  #config.vm.provision "shell",
+  #  inline: "echo Hello, World"
+
   # Start docker containers
   config.vm.provision "docker" do |d|
     d.pull_images "rehf27/bungeecord"
