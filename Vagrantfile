@@ -48,5 +48,9 @@ Vagrant.configure("2") do |config|
     d.pull_images "nimmis/spigot"
     d.run "rehf27/bungeecord",
       args: "-ti -p 25565:25565 -e EULA=true -v '/vagrant/bungeecord:/bungeecord'"
+    d.run "nimmis/spigot",
+      args: "-d -p 25570:25570 -e EULA=true -e SPIGOT_VER=1.11.2 -v '/vagrant/spigot01:/minecraft'"
+    d.run "nimmis/spigot",
+      args: "-d -p 25571:25571 -e EULA=true -e SPIGOT_VER=1.11.2 -v '/vagrant/spigot02:/minecraft'"
   end
 end
